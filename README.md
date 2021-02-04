@@ -1,4 +1,4 @@
-# Library
+# [Library](https://louvang.github.io/library/)
 
 A simple reading log that allows you to add, edit, and delete books.
 
