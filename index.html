@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Library - a simple reading log</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="icon" href="favicon.ico"> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row row-cols-2">
+        <div class="col-title"><h1>Library - a simple reading log</h1></div>
+        <div class="col-add-book">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-book-modal">
+            Add New Book
+          </button>
+        </div>
+      </div>
+
+      <div id="reading-list">
+        <div class="row row-cols-5 row-head">
+          <div class="col-1">Author</div>
+          <div class="col-2">Title</div>
+          <div class="col-3">Page Count</div>
+          <div class="col-4">Completed</div>
+          <div class="col-5">Edit</div>
+        </div>
+      </div>
+
+      <div class="row align-items-start total-row">
+        <div class="col"><h5 id="read-count"></h5></div>
+      </div>
+    </div>
+    <!--.container-->
+
+    <!-- MODALS -->
+    <!-- Add Book -->
+    <div class="modal fade" id="add-book-modal" tabindex="-1" aria-labelledby="add-book-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="add-book-label">Add New Book</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3">
+                <label for="author" class="col-sm-3 col-form-label">Author</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="author" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="title" class="col-sm-3 col-form-label">Title</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="title" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="page-ct" class="col-sm-3 col-form-label">Page Count</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" id="page-ct" />
+                </div>
+              </div>
+              <fieldset class="row mb-3 no-bottom-padding">
+                <legend class="col-form-label col-sm-3 pt-0">Completed</legend>
+                <div class="col-sm-9">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="completed" id="complete" value="complete" />
+                    <label class="form-check-label" for="complete"> Yes </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="completed" id="incomplete" value="incomplete" />
+                    <label class="form-check-label" for="incomplete"> No </label>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="add-book-btn">Add Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Add Book -->
+
+    <!-- Edit Book -->
+    <div class="modal fade" id="edit-book-modal" tabindex="-1" aria-labelledby="edit-book-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="edit-book-label">Edit Book</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3">
+                <label for="edit-author" class="col-sm-3 col-form-label">Author</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="edit-author" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="edit-title" class="col-sm-3 col-form-label">Title</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="edit-title" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="edit-page-ct" class="col-sm-3 col-form-label">Page Count</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" id="edit-page-ct" />
+                </div>
+              </div>
+              <fieldset class="row mb-3 no-bottom-padding">
+                <legend class="col-form-label col-sm-3 pt-0">Completed</legend>
+                <div class="col-sm-9">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="edit-complete"
+                      id="edit-complete"
+                      value="edit-complete"
+                    />
+                    <label class="form-check-label" for="edit-complete"> Yes </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="edit-complete"
+                      id="edit-incomplete"
+                      value="edit-incomplete"
+                    />
+                    <label class="form-check-label" for="edit-incomplete"> No </label>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-book-btn">Save Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Edit Book -->
+
+    <!-- Delete Book -->
+    <div class="modal fade" id="delete-book-modal" tabindex="-1" aria-labelledby="delete-book-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="edit-book-label">Delete Book</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Are you sure you want to delete this book? You cannot undo this.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Never mind.</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="confirm-delete-btn">
+              Yes, delete this book.
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Edit Book -->
+
+    <!-- <button id="clear">Clear storage</button> -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/local-storage.js"></script>
+  </body>
+</html>

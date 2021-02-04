@@ -1,0 +1,93 @@
+body {
+  background-color: #fff;
+  height: 100vh;
+}
+
+.container {
+  margin: 1rem auto;
+  width: 100%;
+
+  .row {
+    padding: 10px 0;
+  }
+
+  .row-cols-2 {
+    align-items: center;
+  }
+
+  .row-head {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+  }
+
+  .col-title {
+    width: 75%;
+  }
+
+  .col-add-book {
+    padding: 0;
+    width: 25%;
+    text-align: right;
+  }
+
+  .book-row {
+    border-bottom: 1px dotted #000;
+  }
+
+  .book-row:hover {
+    background-color: rgb(218, 234, 247);
+    transition: 0.25s ease-in;
+  }
+
+  .col-1 {
+    width: 25%;
+  }
+
+  .col-2 {
+    width: 35%;
+  }
+
+  .col-3 {
+    width: 15%;
+    text-align: center;
+  }
+
+  .col-4 {
+    width: 15%;
+    text-align: center;
+  }
+
+  .col-5 {
+    width: 10%;
+    text-align: center;
+  }
+
+  ion-icon:hover {
+    cursor: pointer;
+  }
+
+  .total-row {
+    padding: 1.5rem 0;
+    border-top: 1px solid #000;
+    text-align: center;
+  }
+}
+
+#add-book-modal,
+#edit-book-modal {
+  .col-form-label {
+    text-align: right;
+  }
+
+  .form-check-input {
+    float: left;
+  }
+
+  // .form-check-label {
+  //   margin-left: 1.5rem;
+  // }
+
+  .no-bottom-padding {
+    margin-bottom: 0;
+  }
+}
