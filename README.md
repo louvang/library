@@ -14,10 +14,11 @@ This webapp uses LocalStorage so if a user clears their web browser's cache or a
 
 The Library uses the [Bootstrap](https://getbootstrap.com) library for front-end interactions. Saved books are cached into the LocalStorage of the user's browser.'
 
-There are two very similar JavaScript files in the `js` directory.
+There are three very similar JavaScript files in the `js` directory.
 
-- `js/script.js` - This file does not save books into the browser's local storage.
+- `js/class.js` - Books are now classes rather than constructors (saves to local storage).
 - `js/local-storage.js` - This file saves books into the browser's local storage.
+- `js/script.js` - This file does not save books into the browser's local storage.
 
 The preview is wired up to `local-storage.js` so books will be saved into the user's local storage.
 
