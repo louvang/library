@@ -30,12 +30,13 @@
       </div>
 
       <div class="row align-items-start total-row">
-        <div class="col"><h5 id="read-count"></h5></div>
+        <div class="col left">
+          <button type="button" class="btn btn-secondary" id="clear">Reset Books</button>
+        </div>
+        <div class="col right"><h5 id="read-count"></h5></div>
       </div>
     </div>
-    <!--.container-->
 
-    <!-- MODALS -->
     <!-- Add Book -->
     <div class="modal fade" id="add-book-modal" tabindex="-1" aria-labelledby="add-book-label" aria-hidden="true">
       <div class="modal-dialog">
@@ -86,7 +87,6 @@
         </div>
       </div>
     </div>
-    <!-- End Add Book -->
 
     <!-- Edit Book -->
     <div class="modal fade" id="edit-book-modal" tabindex="-1" aria-labelledby="edit-book-label" aria-hidden="true">
@@ -150,7 +150,6 @@
         </div>
       </div>
     </div>
-    <!-- End Edit Book -->
 
     <!-- Delete Book -->
     <div class="modal fade" id="delete-book-modal" tabindex="-1" aria-labelledby="delete-book-label" aria-hidden="true">
@@ -170,11 +169,8 @@
         </div>
       </div>
     </div>
-    <!-- End Edit Book -->
-
-    <!-- <button id="clear">Clear storage</button> -->
 
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/local-storage.js"></script>
+    <script src="js/class.js"></script>
   </body>
 </html>

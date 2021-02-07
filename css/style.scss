@@ -70,6 +70,18 @@ body {
     padding: 1.5rem 0;
     border-top: 1px solid #000;
     text-align: center;
+
+    .left {
+      text-align: left;
+    }
+
+    .right {
+      text-align: right;
+    }
+  }
+
+  .clear-row {
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -82,10 +94,6 @@ body {
   .form-check-input {
     float: left;
   }
-
-  // .form-check-label {
-  //   margin-left: 1.5rem;
-  // }
 
   .no-bottom-padding {
     margin-bottom: 0;

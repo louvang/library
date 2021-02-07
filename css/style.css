@@ -76,6 +76,18 @@ body {
   text-align: center;
 }
 
+.container .total-row .left {
+  text-align: left;
+}
+
+.container .total-row .right {
+  text-align: right;
+}
+
+.container .clear-row {
+  padding-bottom: 1.5rem;
+}
+
 #add-book-modal .col-form-label,
 #edit-book-modal .col-form-label {
   text-align: right;
